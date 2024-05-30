@@ -1,27 +1,26 @@
 
-import getterfunctions from './salaryData.js'; // same as import {default as getterfunctions} from './salaryData';
+import ressources from './salaryData.js'; // same as import {default as getterfunctions} from './salaryData';
 
 // Destructuring the object
-const { getDataByRole, getDataByCompany, salaryData } = getterfunctions;
+const { getDataByRole, getDataByCompany, salaryData } = ressources;
 
 
 const averageSalaries = {
 
     getAverageSalaryByRole: role => {
-        let roleData = getDataByRole();
+        let roleData = getDataByRole(role);
         let salariesOfRole = roleData.map(obj => obj.salary);
         return calculateAverage(salariesOfRole);
     },
 
     getAverageSalaryByCompany: company => {
-        const companyData = getDataByCompany();
+        const companyData = getDataByCompany(company);
         const salariesAtCompany = companyData.map(obj => obj.salary);
         return calculateAverage(salariesAtCompany);
     },
 
     getSalaryAtCompany: (role, company) => {
-        const companyData = salaryData;
-        const target = salaryData.find(obj => {
+        const target = ressources.salaryData.find(obj => {
             if (obj.company === company && obj.role === role) {
                 return obj;
             }

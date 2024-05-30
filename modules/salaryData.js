@@ -22,7 +22,7 @@ const ressources = {
     // before all this we need to get all the roles and companies to register them in our arrays back in main.js
     getRoles: () => {
         let roles = [];
-        salaryData.forEach(data => {
+        ressources.salaryData.forEach(data => {
             if (!roles.includes(data.role)) {
                 roles.push(data.role);
             }
@@ -32,7 +32,7 @@ const ressources = {
 
     getCompanies: () => {
         let companies = [];
-        salaryData.forEach(data => {
+        ressources.salaryData.forEach(data => {
             if (!companies.includes(data.company)) {
                 companies.push(data.company);
             }
@@ -42,11 +42,11 @@ const ressources = {
 
     // let's get an array of objects that has a common passed role
     getDataByRole: role => {
-        return salaryData.filter(obj => obj.role === role);
+        return ressources.salaryData.filter(obj => obj.role === role);
     },
     // let's get an array of objects that has a common passed company
     getDataByCompany: company => {
-        return salaryData.filter(obj => obj.company === company);
+        return ressources.salaryData.filter(obj => obj.company === company);
     }
 }
 
