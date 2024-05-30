@@ -38,3 +38,12 @@ const getCompanies = () => {
     });
     return companies;
 }
+
+// let's get an array of objects that has a common passed role
+const getDataByRole = role => {
+    return salaryData.filter(obj => obj.role === role);
+}
+// let's get an array of objects that has a common passed company
+const getDataByCompany = company => {
+    return salaryData.filter(obj => obj.company === company);
+}
