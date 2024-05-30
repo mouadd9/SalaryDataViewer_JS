@@ -2,23 +2,23 @@
 // each time we gather data from our checkboxes in main.js
 // we should fetch for the right object in this array 
 // and return it (it will contain our salary)
-const salaryData = [
-    { role: 'CTO', company: 'Big Data Inc.', salary: 320000 },
-    { role: 'Technical Lead', company: 'Big Data Inc.', salary: 230000 },
-    { role: 'Software Engineer II', company: 'Big Data Inc.', salary: 180000 },
-    { role: 'Software Engineer I', company: 'Big Data Inc.', salary: 140000 },
-    { role: 'CTO', company: 'Medium Data Inc.', salary: 215000 },
-    { role: 'Technical Lead', company: 'Medium Data Inc.', salary: 165000 },
-    { role: 'Software Engineer II', company: 'Medium Data Inc.', salary: 140000 },
-    { role: 'Software Engineer I', company: 'Medium Data Inc.', salary: 115000 },
-    { role: 'CTO', company: 'Small Data Inc.', salary: 175000 },
-    { role: 'Technical Lead', company: 'Small Data Inc.', salary: 135000 },
-    { role: 'Software Engineer II', company: 'Small Data Inc.', salary: 115000 },
-    { role: 'Software Engineer I', company: 'Small Data Inc.', salary: 95000 },
-];
 
-const getters = {
+const ressources = {
 
+    salaryData: [
+        { role: 'CTO', company: 'Big Data Inc.', salary: 320000 },
+        { role: 'Technical Lead', company: 'Big Data Inc.', salary: 230000 },
+        { role: 'Software Engineer II', company: 'Big Data Inc.', salary: 180000 },
+        { role: 'Software Engineer I', company: 'Big Data Inc.', salary: 140000 },
+        { role: 'CTO', company: 'Medium Data Inc.', salary: 215000 },
+        { role: 'Technical Lead', company: 'Medium Data Inc.', salary: 165000 },
+        { role: 'Software Engineer II', company: 'Medium Data Inc.', salary: 140000 },
+        { role: 'Software Engineer I', company: 'Medium Data Inc.', salary: 115000 },
+        { role: 'CTO', company: 'Small Data Inc.', salary: 175000 },
+        { role: 'Technical Lead', company: 'Small Data Inc.', salary: 135000 },
+        { role: 'Software Engineer II', company: 'Small Data Inc.', salary: 115000 },
+        { role: 'Software Engineer I', company: 'Small Data Inc.', salary: 95000 },
+    ],
     // before all this we need to get all the roles and companies to register them in our arrays back in main.js
     getRoles: () => {
         let roles = [];
@@ -50,4 +50,4 @@ const getters = {
     }
 }
 
-export default getters; // same as export {getters as default}
+export default ressources; // same as export {getters as default}
