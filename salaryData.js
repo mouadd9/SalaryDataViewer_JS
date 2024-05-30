@@ -17,33 +17,37 @@ const salaryData = [
     { role: 'Software Engineer I', company: 'Small Data Inc.', salary: 95000 },
 ];
 
-// before all this we need to get all the roles and companies to register them in our arrays back in main.js
+const getters = {
 
-const getRoles = () => {
-    let roles = [];
-    salaryData.forEach(data => {
-        if (!roles.includes(data.role)) {
-            roles.push(data.role);
-        }
-    });
-    return roles;
+    // before all this we need to get all the roles and companies to register them in our arrays back in main.js
+    getRoles: () => {
+        let roles = [];
+        salaryData.forEach(data => {
+            if (!roles.includes(data.role)) {
+                roles.push(data.role);
+            }
+        });
+        return roles;
+    },
+
+    getCompanies: () => {
+        let companies = [];
+        salaryData.forEach(data => {
+            if (!companies.includes(data.company)) {
+                companies.push(data.company);
+            }
+        });
+        return companies;
+    },
+
+    // let's get an array of objects that has a common passed role
+    getDataByRole: role => {
+        return salaryData.filter(obj => obj.role === role);
+    },
+    // let's get an array of objects that has a common passed company
+    getDataByCompany: company => {
+        return salaryData.filter(obj => obj.company === company);
+    }
 }
 
-const getCompanies = () => {
-    let companies = [];
-    salaryData.forEach(data => {
-        if (!companies.includes(data.company)) {
-            companies.push(data.company);
-        }
-    });
-    return companies;
-}
-
-// let's get an array of objects that has a common passed role
-const getDataByRole = role => {
-    return salaryData.filter(obj => obj.role === role);
-}
-// let's get an array of objects that has a common passed company
-const getDataByCompany = company => {
-    return salaryData.filter(obj => obj.company === company);
-}
+export default getters; // same as export {getters as default}

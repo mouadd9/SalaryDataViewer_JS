@@ -1,8 +1,11 @@
 
+import getterfunctions from './salaryData.js'; // same as import {default as getterfunctions} from './salaryData';
 
+// Destructuring the object
+const { getRoles, getCompanies, getDataByRole, getDataByCompany } = getterfunctions;
 
-const companies = ["OpenAi", "X", "Meta"];
-const roles = ["Big data", "AI"];
+const companies = getCompanies();
+const roles = getRoles();
 
 // Create input buttons for every company and role represented in the data.
 
