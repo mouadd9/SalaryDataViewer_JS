@@ -1,8 +1,9 @@
 
 import getterfunctions from './salaryData.js'; // same as import {default as getterfunctions} from './salaryData';
-
+import averageSalaries from './calculationsModule.js'; 
 // Destructuring the object
 const { getRoles, getCompanies, getDataByRole, getDataByCompany } = getterfunctions;
+const {getAverageSalaryByRole, getAverageSalaryByCompany, getSalaryAtCompany, getIndustryAverageSalary } = averageSalaries; 
 
 const companies = getCompanies();
 const roles = getRoles();
@@ -59,10 +60,10 @@ function updateResults() {
         return;
     }
 
-    const averageSalaryByRole = 0;
-    const averageSalaryByCompany = 0;
-    const salary = 0;
-    const industryAverageSalary = 0;
+    const averageSalaryByRole = getAverageSalaryByRole(role);
+    const averageSalaryByCompany = getAverageSalaryByCompany(company);
+    const salary = getSalaryAtCompany(role, company);
+    const industryAverageSalary = getIndustryAverageSalary();
 
     document.getElementById('salarySelected').innerText = `The salary for ${role}s at ${company} is \$${salary}`;
     document.getElementById('salaryAverageByRole').innerText = `The industry average salary for ${role} positions is \$${averageSalaryByRole}`;
