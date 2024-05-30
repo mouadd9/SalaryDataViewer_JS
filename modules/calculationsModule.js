@@ -2,7 +2,7 @@
 import getterfunctions from './salaryData.js'; // same as import {default as getterfunctions} from './salaryData';
 
 // Destructuring the object
-const { getRoles, getCompanies, getDataByRole, getDataByCompany, salaryData } = getterfunctions;
+const { getDataByRole, getDataByCompany, salaryData } = getterfunctions;
 
 
 const averageSalaries = {
@@ -43,4 +43,4 @@ const calculateAverage = (arrayOfNumbers) => {
     return (sum / arrayOfNumbers.length).toFixed(2);
 }
 
-export default averageSalaries ; 
+export default averageSalaries; 

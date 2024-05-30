@@ -1,9 +1,9 @@
 
-import getterfunctions from './salaryData.js'; // same as import {default as getterfunctions} from './salaryData';
-import averageSalaries from './calculationsModule.js'; 
+import getterfunctions from './modules/salaryData.js'; // same as import {default as getterfunctions} from './salaryData';
+import averageSalaries from './modules/calculationsModule.js';
 // Destructuring the object
-const { getRoles, getCompanies, getDataByRole, getDataByCompany } = getterfunctions;
-const {getAverageSalaryByRole, getAverageSalaryByCompany, getSalaryAtCompany, getIndustryAverageSalary } = averageSalaries; 
+const { getRoles, getCompanies } = getterfunctions;
+const { getAverageSalaryByRole, getAverageSalaryByCompany, getSalaryAtCompany, getIndustryAverageSalary } = averageSalaries;
 
 const companies = getCompanies();
 const roles = getRoles();
